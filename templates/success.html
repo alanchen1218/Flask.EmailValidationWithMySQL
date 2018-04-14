@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Validation with MySQL</title>
+    <link rel='stylesheet' type='text/css' href ="{{ url_for('static', filename= 'style.css')}}">
+</head>
+<body class = "body1">
+    <h3>Emails already in the DB:</h3>
+    <div class = "wrapper">
+            <div class="id">
+                <div class="headID">
+                    ID:
+                </div>
+                {% for x in emails: %}
+                    <p> {{x.id}} </p>
+                {% endfor %}
+            </div>
+            <div class="email">
+                <div class="heademail">
+                    Email:                                    
+                </div>
+                {% for x in emails: %}
+                    <p> {{x.email}}</p>
+                {% endfor %}
+            </div>
+            <div class="create">
+                <div class="headCreate">
+                    Created At:
+                </div>
+                {% for x in emails: %}
+                    <p> {{x.created_at}} </p>
+                {% endfor %}
+            </div>
+            <div class="update">
+                <div class="headUpdate">
+                    Updated At:
+                </div>
+                    {% for x in emails: %}
+                        <p> {{x.updated_at}} </p>
+                    {% endfor %}
+                </div>
+            
+        </div>
+
+    <form action='/'>
+        <input type='submit' value='Go Back'>
+    </form>        
+</body>
+</html>
